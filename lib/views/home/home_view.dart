@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ru_ufal_app/core/app_colors.dart';
 import 'package:ru_ufal_app/utils/formatter_util.dart';
+import 'package:ru_ufal_app/views/home/home_controller.dart';
 import 'package:ru_ufal_app/views/home/widgets/food_tile.dart';
 import 'package:ru_ufal_app/views/home/widgets/tag_widget.dart';
 
 class HomeView extends StatelessWidget {
+  final HomeController homeController = HomeController();
+
   @override
   Widget build(BuildContext context) {
     Size deviceSize = MediaQuery.of(context).size;
@@ -89,21 +92,35 @@ class HomeView extends StatelessWidget {
                   ),
                 ),
               ),
-              Row(
-                children: [
-                  TagWidget(
-                    title: "Café da Manhã",
-                    isSelected: true,
-                  ),
-                  TagWidget(
-                    title: "Almoço",
-                    isSelected: false,
-                  ),
-                  TagWidget(
-                    title: "Jantar",
-                    isSelected: false,
-                  ),
-                ],
+              ValueListenableBuilder(
+                valueListenable: homeController.tagSelectedNotifier,
+                builder: (context, tagSelectedIndex, _) {
+                  return Row(
+                    children: [
+                      TagWidget(
+                        title: "Café da Manhã",
+                        isSelected: tagSelectedIndex == 0,
+                        onTapped: () {
+                          homeController.tagSelected = 0;
+                        },
+                      ),
+                      TagWidget(
+                        title: "Almoço",
+                        isSelected: tagSelectedIndex == 1,
+                        onTapped: () {
+                          homeController.tagSelected = 1;
+                        },
+                      ),
+                      TagWidget(
+                        title: "Jantar",
+                        isSelected: tagSelectedIndex == 2,
+                        onTapped: () {
+                          homeController.tagSelected = 2;
+                        },
+                      ),
+                    ],
+                  );
+                },
               ),
               Padding(
                 padding: EdgeInsets.symmetric(
