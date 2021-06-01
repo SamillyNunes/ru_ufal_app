@@ -7,7 +7,7 @@ class AppWidget extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "RU Ufal App",
-      // theme: ThemeData(primarySwatch: Colors.blue),
+      theme: ThemeData(fontFamily: "Rajdhani"),
       home: CustomPageView(),
     );
   }

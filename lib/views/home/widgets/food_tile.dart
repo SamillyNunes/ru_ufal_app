@@ -52,6 +52,7 @@ class FoodTile extends StatelessWidget {
                 this.title,
                 style: TextStyle(
                   color: AppColors.black,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
             ),

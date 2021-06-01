@@ -23,7 +23,7 @@ class HomeView extends StatelessWidget {
           decoration: BoxDecoration(
             color: AppColors.defaultBlue,
             borderRadius: BorderRadius.vertical(
-              bottom: Radius.circular(10),
+              bottom: Radius.circular(20),
             ),
           ),
           child: Container(
@@ -53,6 +53,7 @@ class HomeView extends StatelessWidget {
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: AppColors.white,
+                        fontSize: 20,
                       ),
                     ),
                     SizedBox(height: deviceSize.height * 0.01),
@@ -60,6 +61,7 @@ class HomeView extends StatelessWidget {
                       "Saldo: R\$ 50,00",
                       style: TextStyle(
                         color: AppColors.white,
+                        fontSize: 20,
                       ),
                     ),
                   ],
@@ -109,6 +111,9 @@ class HomeView extends StatelessWidget {
                 ),
                 child: Text(
                   "Comida",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ),
               FoodTile(

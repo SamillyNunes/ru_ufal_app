@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ru_ufal_app/views/custom_page_view/custom_fab.dart';
+import 'package:ru_ufal_app/views/global_widgets/custom_fab.dart';
 import 'package:ru_ufal_app/views/global_widgets/bottom_navig_bar.dart';
 import 'package:ru_ufal_app/views/home/home_view.dart';
 
