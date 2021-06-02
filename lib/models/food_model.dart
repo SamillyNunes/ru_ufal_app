@@ -47,11 +47,17 @@ class FoodModel {
   }
 
   factory FoodModel.fromMap(Map<String, dynamic> map) {
+    print("has id? ${map.containsKey('id')}");
+    print("has title? ${map.containsKey('title')}");
+    print("has category? ${map.containsKey('category')}");
+    print("has urlField? ${map.containsKey('urlField')}");
+    print("has isVegeterian? ${map.containsKey('isVegeterian')}");
+    print("has vegan? ${map.containsKey('isVegan')}");
     return FoodModel(
       id: map['id'],
       title: map['title'],
       category: map['category'],
-      imageUrl: map['imageUrl'],
+      imageUrl: map['urlField'],
       isVegeterian: map['isVegeterian'],
       isVegan: map['isVegan'],
     );
