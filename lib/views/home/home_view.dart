@@ -323,7 +323,7 @@ class _HomeViewState extends State<HomeView> {
               );
             } else if (snapshot.hasError) {
               return Center(
-                child: Text("Error on data"),
+                child: Text("Error on data. Error: ${snapshot.error}"),
               );
             }
 
