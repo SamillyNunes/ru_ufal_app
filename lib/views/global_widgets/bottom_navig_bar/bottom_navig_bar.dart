@@ -85,7 +85,7 @@ class BottomNavigBar extends StatelessWidget {
       onTap: () => onTap(),
       child: SvgPicture.asset(
         isActive ? activatedIconUrl : iconUrl,
-        height: deviceSize.height * 0.05,
+        height: deviceSize.height * 0.035,
       ),
     );
   }

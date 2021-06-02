@@ -9,17 +9,17 @@ class ApiService {
 
   Future<List<MealModel>> getMeals() async {
     Uri? uri = Uri.tryParse("$apiUrl/meals/?format=json");
-    print("uri: $uri");
+    // print("uri: $uri");
     List<MealModel> listMeals = [];
 
     await http.get(uri!, headers: {
       "Accept": "application/json",
       "Access-Control_Allow_Origin": "*"
     }).then((response) async {
-      print("entrou aqui");
+      // print("entrou aqui");
       if (response.statusCode == 200) {
         List<dynamic> body = jsonDecode(response.body);
-        print("\nboy $body");
+        // print("\nboy $body");
 
         for (Map m in body) {
           int foodId = m["food"];
@@ -50,7 +50,7 @@ class ApiService {
 
     late FoodModel foodModel;
 
-    print("uri: $uri");
+    // print("uri: $uri");
     await http.get(
       uri!,
       headers: {
@@ -58,12 +58,12 @@ class ApiService {
         "Access-Control_Allow_Origin": "*"
       },
     ).then((response) {
-      print("entrou aqui no food");
+      // print("entrou aqui no food");
       if (response.statusCode == 200) {
         dynamic body = jsonDecode(response.body);
-        print("\nboy $body");
+        // print("\nboy $body");
         foodModel = FoodModel.fromMap(body);
-        print("food? $foodModel");
+        // print("food? $foodModel");
         return foodModel;
       } else {
         throw Exception("Response status: ${response.statusCode}");

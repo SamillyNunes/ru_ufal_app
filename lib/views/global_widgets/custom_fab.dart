@@ -9,13 +9,13 @@ class CustomFAB extends StatelessWidget {
     Size deviceSize = MediaQuery.of(context).size;
 
     return Container(
-      height: deviceSize.width * 0.12,
-      width: deviceSize.width * 0.12,
+      height: deviceSize.width * 0.15,
+      width: deviceSize.width * 0.15,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(50),
         color: AppColors.defaultBlue,
       ),
-      padding: EdgeInsets.all(deviceSize.width * 0.03),
+      padding: EdgeInsets.all(deviceSize.width * 0.04),
       child: SvgPicture.asset(
         AppVectors.qrCodeScanIcon,
         color: AppColors.white,
