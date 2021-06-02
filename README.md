@@ -1,3 +1,4 @@
+
 # RU UFAL App
 
 A mobile project built for Hackaton in Aracomp 2021. Aims to gather feautures for UFAL Restaurant, including initially a menu food.
